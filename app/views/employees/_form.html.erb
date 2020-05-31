@@ -1,5 +1,5 @@
 
-<%= form_with scope: :employee, url: employees_path, local: true do |form| %>
+<%= form_with model: @employee, local: true do |form| %>
     <table class = "edit_table">
         <tr>
             <td><%= form.label :name %></td>
