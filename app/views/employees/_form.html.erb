@@ -1,5 +1,16 @@
 
-<%= form_with model: @employee, local: true do |form| %>
+<%= form_with model: @employee, :html => {:autocomplete => "on"}, local: true do |form| %>
+
+    <% if @employee.errors.any? %>
+    <div class="error_explanation">
+      <ul>
+        <% @employee.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
     <table class = "edit_table">
         <tr>
             <td><%= form.label :name %></td>
